@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Traversing - jQuery" />
+    <title>Traversing - jQuery</title>
+  </head>
+  <body>
+    <h1><center>Traversing - jQuery</center></h1>
+    <ul id="list">
+      <li>Home</li>
+      <li class="list-item">About</li>
+      <li class="list-item">Project</li>
+      <li>Contact</li>
+    </ul>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("document").ready(function () {
+        //each()
+
+        /* $("li").each(function (index) {
+          console.log(`Index : ${index} => Element : ${$(this).text()}`);
+        });*/
+
+        //children()
+
+        /*$("#list")
+          .children()
+          .each(function (index) {
+            console.log(`Index : ${index} => Element : ${$(this).text()}`);
+          });*/
+
+        //find()
+
+        /* $("#list")
+          .find(".list-item")
+          .each(function (index) {
+            console.log(`Index : ${index} => Element : ${$(this).text()}`);
+          });
+      });
+
+      //next()/prev()
+      console.log($(".list-item").next().html()); //project
+      console.log($(".list-item").prev().html()); //html
+
+      //parent()
+      console.log($(".list-item").parent().html());*/
+
+        //siblings()
+        console.log($(".list-item").siblings());
+        $(".list-item")
+          .siblings()
+          .each(function (index) {
+            console.log(`Index : ${index} => Element : ${$(this).text()}`);
+          });
+      });
+    </script>
+  </body>
+</html>

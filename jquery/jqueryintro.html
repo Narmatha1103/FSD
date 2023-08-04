@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JQuery" />
+    <title>"JQuery</title>
+  </head>
+  <body>
+    <h1 style="font-size: 30px; font-family: 'Courier New', Courier, monospace">
+      <center>"JQuery</center>
+      <div
+        id="box"
+        style="height: 200px; width: 200px; background-color: blue"
+      ></div>
+    </h1>
+    <p id="demo">Narmatha</p>
+    <p id="para">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore mollitia
+      amet expedita necessitatibus molestias natus ea possimus distinctio
+      assumenda quo.
+    </p>
+
+    <div id="result">
+      <h2>Another Heading</h2>
+      <p class="demo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime delectus
+        facilis quisquam a dignissimos repudiandae ducimus dolores laboriosam
+        vel, totam voluptatibus. Vel quod ipsum molestias nulla eaque, dolor
+        magnam laudantium.
+      </p>
+    </div>
+    <div>
+      <span>This is span Text</span>
+    </div>
+    <img src="./angel.jpg" alt="angel" style="height: 200px; width: 200px" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <p>
+      <input type="submit" value="submit" id="btn" />
+    </p>
+
+    <script>
+      //selector
+
+      /* $("document").ready(function () {
+        alert("Hello , jQuery");
+        $(".head").append("Heading");
+        $("#para").append(" .This is  paragraph with id para");
+        $("p").append("This is paragraph");
+        $("[class='demo']").append(" Text added by Attribute selector");
+        console.log($("p"));
+        console.log($("#para"));
+      });
+
+      //manipulation
+      $("#para").after("<h1 style= color:red;>Heading</h2>");
+      $("#para").before("<h1 style= color:green;>Main Heading</h2>");
+      $("#para").prepend("<h1 style= color:red;>Hi, i'm narmatha</h2>");
+      $("#demo").remove();
+      $("<h3 style=color:blue>LOVE and LUST 100%</h3>").replaceAll("p");
+      $("span").wrap("<p></p>");*/
+
+      //handle attribute
+
+      /*$("document").ready(function () {
+        //attr()
+        /* console.log($("img").attr("style")); // get attr value
+        $("img").attr("class", "image"); // set the value in attr
+        $("img").attr("alt", "angel-image"); // change attr value
+
+        //prop()
+        let styleAttr = $("img").prop("style"); // grt method prop
+        console.log(styleAttr); //CSSStyleDeclaration
+        console.log(styleAttr.width); //200px
+        console.log(styleAttr.height); //200px
+
+        $("img").prop(
+          "style",
+          "border : 5px solid blue ; height: 200px; width: 200px"
+        ); // replace the value in style
+
+        console.log($("h1").prop("style").fontFamily); //Courier New', Courier, monospace
+      });
+
+      //html()
+      console.log($("#result").html());
+      $("#result").html("<h3>LOREM :</h3>"); // replace html content
+
+      //text()
+      console.log($("#para").text());
+      console.log($("#para").text("This is a new insert")); // change
+
+      //val()
+      console.log($("#btn").val());
+      console.log($("#btn").val("Search"));*/
+
+      //handle height and width
+      $("document").ready(function () {
+        console.log($("#box").height()); // get value
+        console.log($("#box").width());
+        console.log($("#box").height(100)); // replace value
+        console.log($("#box").width(150));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Animation jQuery" />
+    <title>Animation jQuery</title>
+    <style>
+      .redBox {
+        background-color: red;
+        height: 100px;
+        width: 100px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><center>Animation jQuery</center></h1>
+    <div id="container" class="redBox"></div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("document").ready(function () {
+        //animate
+
+        /* $("#container").animate(
+          {
+            height: "200px",
+            width: "200px",
+          },
+          4000,
+          function () {
+            alert("Animation Completed"); // callback function
+          }
+        );*/
+
+        //fadeIn()/fadeOut()
+        /*$("#container").fadeIn(5000, function () {
+          alert("FadeIn Animation Completed"); // add style display:none;
+        });*/
+
+        /*$("#container").fadeOut(5000, function () {
+          alert("FadeOut Animation Completed"); // remove style display:none;
+        });*/
+
+        //hide()/show()
+        /*$("#container").hide(5000, function () {
+          alert("Element Hidden"); // remove box
+        });*/
+
+        $("#container").show(5000, function () {
+          alert("Element Displayed"); //  add style display:none;
+        });
+      });
+    </script>
+  </body>
+</html>
