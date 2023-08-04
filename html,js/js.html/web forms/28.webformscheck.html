@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Web Forms - checkbox" />
+    <title>Web Forms - cheackbox</title>
+  </head>
+  <body>
+    <h1><center>Web Forms - cheackbox</center></h1>
+    <form action="#">
+      <p>Select Anyone</p>
+      <label for="tamil">
+        <input
+          type="checkbox"
+          name="subjects"
+          id="tamil"
+          value="Tamil"
+        />Tamil</label
+      >
+
+      <label for="english"
+        ><input
+          type="checkbox"
+          name="subjects"
+          id="english"
+          value="English"
+        />English</label
+      >
+
+      <label for="maths">
+        <input
+          type="checkbox"
+          name="subjects"
+          id="maths"
+          value="Maths"
+        />Maths</label
+      >
+
+      <label for="science"
+        ><input
+          type="checkbox"
+          name="subjects"
+          id="science"
+          value="Science"
+        />Science</label
+      >
+
+      <label for="social"
+        ><input
+          type="checkbox"
+          name="subjects"
+          id="social"
+          value="Social"
+        />Social</label
+      >
+      <p><input type="submit" id="submit" value="Submit" /></p>
+    </form>
+    <hr />
+    <p id="result"></p>
+
+    <script>
+      /* let submitBtn = document.querySelector("#submit");
+      let result = document.querySelector("#result");
+
+      let selectedOption = [];
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let subjectOpts = document.querySelectorAll(
+          "[type ='checkbox']:checked"
+        );
+        for (const subjectOpt of subjectOpts) {
+          if (subjectOpt.checked) {
+            selectedOption.push(subjectOpt.value);
+          }
+        }
+        console.log(selectedOption);
+        result.textContent =
+          selectedOption.length > 0
+            ? `User selected :${selectedOption.join(", ")}`
+            : `User Not Selected Any Option`;
+      });*/
+
+      //change Event
+      let submitBtn = document.querySelector("#submit");
+      let result = document.querySelector("#result");
+      let subjectOpts = document.querySelectorAll("[type ='checkbox']");
+
+      let selectedOption = [];
+
+      for (const subjectOpt of subjectOpts) {
+        subjectOpt.addEventListener("change", () => {
+          let subjectOpts = document.querySelectorAll(
+            "[type ='checkbox']:checked"
+          );
+
+          let selectedOption = Array.from(subjectOpts).map((c) => c.value);
+          console.log(selectedOption);
+          result.textContent =
+            selectedOption.length > 0
+              ? `User selected :${selectedOption.join(", ")}`
+              : `User Not Selected Any Option`;
+        });
+      }
+    </script>
+  </body>
+</html>

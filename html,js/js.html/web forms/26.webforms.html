@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Web Forms - JS" />
+    <title>Web Forms - JS</title>
+  </head>
+  <body>
+    <h1><center>Web Forms - JS</center></h1>
+    <form action="#" id="form">
+      <p>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Your Name"
+        />
+      </p>
+      <p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Your Email"
+        />
+      </p>
+      <p>
+        <textarea
+          name="Message"
+          id="Message"
+          cols="30"
+          rows="10"
+          placeholder="Enter Your Message"
+        ></textarea>
+      </p>
+      <p><input type="submit" value="submit" /></p>
+      <p><input type="reset" value="clear" /></p>
+    </form>
+
+    <script>
+      //web Forms
+
+      let form = document.querySelector("#form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // access the form element
+        // console.log(document.forms); //HTML collection
+        console.log(document.forms[0]); // form set dispaly
+        console.log(document.forms[0][0].value);
+        console.log(document.forms[0][1].value);
+        console.log(document.forms[0][2].value);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manipulation Attribute -JS" />
+    <title>Manipulation Attribute -JS</title>
+    <style>
+      .show {
+        height: 200px;
+        width: 200px;
+        background: red;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><center>Manipulation Attribute -JS</center></h1>
+    <p>This is a Paragraph</p>
+    <div class="demo name Hello">
+      <h2>Heading news</h2>
+    </div>
+    <ul id="list">
+      <li class="list-items">Home</li>
+      <li class="list-items">About</li>
+      <li class="list-items">Projects</li>
+      <li class="list-items" style="display: none">Contect</li>
+    </ul>
+    <div class="box"></div>
+    <button id="add">Add</button>
+    <button id="remove">Remove</button>
+    <button id="toggle">Toggle</button>
+    <script>
+      // setAttribute
+      /*let para = document.querySelector("p");
+      para.setAttribute("id", "para");
+      let btn = document.querySelector("button");
+      btn.setAttribute("disabled", "");*/
+
+      //getAttribute
+      /* let para = document.querySelector("p");
+      console.log(para.getAttribute("className")); //null
+      para.removeAttribute("id");
+      console.log(para.hasAttribute("id")); //false*/
+
+      //Manipulating style
+
+      /*let list = document.querySelector("#list");
+      let listItems = document.querySelectorAll(".list-items");
+      console.log(list.style);
+      list.style.display = "flex"; // inline of list
+      list.style.justifyContent = "space-around"; // make a space in list
+      list.style.background = "blue";
+      console.log(listItems); // radio button remove
+      for (const ele of listItems) {
+        ele.style.listStyle = "none";
+      }*/
+
+      //className
+
+      //classList => add(),remove(),replace(),contains(),toggle()
+      let divEle = document.querySelector(".box");
+      //console.log(divEle.className); // demo name Hello
+      //console.log(divEle.className.split(" "));
+      let addBtn = document.querySelector("#add");
+      let removeBtn = document.querySelector("#remove");
+      let toggleBtn = document.querySelector("#toggle");
+      addBtn.addEventListener("click", () => {
+        divEle.classList.add("show");
+      });
+      removeBtn.addEventListener("click", () => {
+        divEle.classList.remove("show");
+      });
+      toggleBtn.addEventListener("click", () => {
+        divEle.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

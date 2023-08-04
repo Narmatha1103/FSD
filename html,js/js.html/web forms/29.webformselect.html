@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Select" />
+    <title>Select</title>
+  </head>
+  <body>
+    <h1>
+      <center><select></select></center>
+    </h1>
+    <form action="#">
+      <p>Select Subject(s)</p>
+      <select name="subjects" id="subjects" multiple>
+        <option value="Tamil">Tamil</option>
+        <option value="English">English</option>
+        <option value="Maths">Maths</option>
+        <option value="Science">Science</option>
+        <option value="Social">Social</option>
+      </select>
+      <p><button id="btn">Click</button></p>
+    </form>
+
+    <hr />
+    <p id="result"></p>
+
+    <script>
+      let btn = document.querySelector("#btn");
+      let result = document.querySelector("#result");
+      let selectedOption = [];
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let subject = document.querySelector("#subjects").options;
+        console.log(subject);
+        for (const subjectOpt of subject) {
+          if (subjectOpt.selected) {
+            selectedOption.push(subjectOpt.value);
+          }
+        }
+        console.log(selectedOption);
+        result.textContent =
+          selectedOption.length > 0
+            ? `User selected :${selectedOption.join(", ")}`
+            : `User Not Selected Any Option`;
+        selectedOption = []; // selected sigle value only diplay
+      });
+    </script>
+  </body>
+</html>

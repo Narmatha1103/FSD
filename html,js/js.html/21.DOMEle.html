@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DOM Ele - JS" />
+    <title>DOM Ele - JS</title>
+  </head>
+  <body>
+    <h1><center>DOM Ele - JS</center></h1>
+
+    <div id="demo">
+      <h2>Heading news</h2>
+    </div>
+
+    <p id="para">This is a Paragraph</p>
+
+    <ul id="list">
+      <li class="list-items">Home</li>
+      <li class="list-items">About</li>
+      <li class="list-items">Projects</li>
+      <li class="list-items" style="display: none">Contect</li>
+    </ul>
+
+    <button id="btn">click</button>
+
+    <script>
+      // createElement(Tagname);
+      /*let para = document.createElement("p");
+      para.id = "para";
+      para.className = "para-class";
+      //para.textContent = "This is a Paragraph";
+
+      // createTextNode("text content")
+      let text = document.createTextNode("This is a another Paragraph");
+      console.log(text);
+      para.appendChild(text);
+      let demo = document.querySelector("#demo");
+      demo.appendChild(para);
+      console.log(demo);
+      console.log(para);*/
+
+      //appendchild()
+      /* let subjectArr = ["Tamil", "English", "Maths", "Science", "Social"];
+      let list = document.querySelector("#list");
+      let btn = document.querySelector("#btn");
+      btn.addEventListener("click", function () {
+        subjectArr.forEach((subjects) => {
+          let li = document.createElement("li");
+          li.className = "list-item";
+          li.textContent = subjects;
+          list.appendChild(li);
+        });
+      });
+      console.log(list);*/
+
+      //textContent
+      /*let para = document.querySelector("#para");
+      console.log(para.textContent); // This is a paragraph
+      para.textContent = "This is Modified Paragraph";*/
+
+      //innerText
+      let list = document.querySelector("#list");
+      console.log(list.textContent);
+      console.log(list.innerHTML);
+    </script>
+  </body>
+</html>

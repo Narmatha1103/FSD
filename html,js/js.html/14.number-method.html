@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="number method - JS" />
+    <title>number method - JS</title>
+  </head>
+  <body>
+    <h1><center>number method - JS</center></h1>
+    <script>
+      console.log(1e9); // 1 * 1000000000 => 1000000000
+      console.log(3e-4); // 3 * 1/10000 => 3/10000 => 0.0003
+      console.log(4.5e-3); //4.5 * 1/1000 => 4.5/1000 =>0.0045
+      console.log(Math.floor(23.45)); // 23
+      console.log(Math.floor(34.78)); //34
+      console.log(Math.ceil(12.47)); //13
+      console.log(Math.ceil(78.67)); //79
+      console.log(Math.round(11.23)); // <=5 .2334 11
+      console.log(Math.round(45.49)); //46
+      console.log(Math.trunc(12.785)); // removes every . decimal point 12
+      console.log(Math.trunc(89.67)); //89
+      console.log(Math.random() * 20); // 0 to 19 => random num => decimal
+      console.log(Math.ceil(Math.random() * 20)); // whole random num
+      console.log(Math.max(180, 34, -3)); //180
+      console.log(Math.min(-9, 10, 67)); //-9
+      console.log(Math.pow(2, 10)); // 2^10 => 1024
+      console.log((12.23456789).toFixed(2)); //12.23 decimal point calculated
+      console.log((34.8765432).toPrecision(5)); // 34.877 calculate the all num
+      console.log((100000).toExponential()); //1e+5
+      console.log(isNaN("Hello")); //true string
+      console.log(isNaN(12345)); //false
+      console.log(isFinite("Hello")); //false
+      console.log(isFinite(12345)); //true number
+      console.log(parseInt("24px")); // 24 whole number+string
+      console.log(parseInt("abc123")); //NaN
+      console.log(parseFloat("23.89px")); //23.89 decimal number+string
+      console.log(parseFloat("abc3456")); //NaN
+    </script>
+  </body>
+</html>

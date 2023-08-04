@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Web API -JS" />
+    <title>Web API -JS</title>
+  </head>
+  <body>
+    <h1><center>Web API -JS</center></h1>
+    <script>
+      //Local Storage / Session Storage
+      // setItem(key,value),getItems(),removeItem(),clear(),key(index),length
+      //localStorage.setItem("Name", "Narma");
+      //sessionStorage.setItem("age", 22);
+      let name = {
+        name: "Narma",
+        age: 22,
+        city: "Tirupur",
+      };
+      let person = localStorage.setItem("name", JSON.stringify(name)); // JSON.stringify is convert to the object => string
+      console.log(localStorage.getItem(name));
+      console.log(JSON.parse(localStorage.getItem(name)));
+      localStorage.removeItem(name);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Loops" />
+    <title>Loops</title>
+  </head>
+  <body>
+    <h1><center>LOOPS</center></h1>
+    <!--
+        Loops
+        1.while
+        2.do...while
+        3.for{;;}
+    -->
+    <script>
+      // 1. while
+
+      //++
+      //let init = 1; //initialization   12345678910
+      //while (init <= 10) {
+      // console.log(init); //1
+      //init++; //1+1=2
+      // }
+
+      //--
+      //let init = 10; //initialization 109876543210
+      //while (init >= 0) {
+      // console.log(init); //10
+      //init--; //10-1=9
+      // }
+
+      //Name 5 time value
+      //let init = 0; //initialization 5john
+      // while (init < 5) {
+      // console.log("john");
+      // init++;
+      //}
+
+      // let i = 0; //initialization   Interation : 1 , john => 5 times displayed
+      //while (i < 5) {
+      // console.log(`Iteration : ${i + 1} ,john`);
+      //  i++;
+      //}
+
+      //EVEN NUMBERS
+
+      // 1. method
+      // let init = 0; //initialization   02468101214161820
+      //while (init <= 20) {
+      //  console.log(init);
+      //  init = init + 2;
+      //}
+
+      // 2. method
+      //let i = 0; //initialization   02468101214161820
+      //while (i <= 20) {
+      //if (i % 2 == 0) {
+      //console.log(i);
+      //}
+      //i++;
+      //}
+
+      //do...while
+
+      //let i = 0;  //012345
+      //do {
+      //console.log(i);
+      //i++;
+      //} while (i <= 5);
+
+      //for{;;}
+
+      //for (let i = 1; i <= 5; i++) { //12345
+      // console.log(i);
+      // }
+
+      //for (let i = 5; i >= 1; i--) { //54321
+      // console.log(i);
+      // }
+
+      //skipping initalization/increment&decrement
+      //let i = 5;
+      //for (; i >= 1; ) {
+      //console.log(i); //54321
+      //i--;
+      //}
+
+      //Nested loop
+
+      //for (initOut = 1; initOut <= 5; initOut++) {
+      // console.log("Outer loop");
+      // console.log(initOut);
+      // console.log("Inner loop");
+      // for (initIn = 1; initIn <= 5; initIn++) {
+      //   console.log(initIn);
+      // }
+      // }
+
+      // for (i = 1; i <= 3; i++) {
+      // for (j = 1; j <= 3; j++) {
+      //  console.log(i);
+      // }
+      //}
+
+      //break:
+
+      //for (i = 1; i <= 10; i++) {
+      // console.log(i);
+      //if (i == 5) {
+      //break;
+      //}
+      //}
+
+      //Continue
+
+      //for (i = 1; i <= 10; i++) {
+      // if (i % 2) {  // => even  odd => (i%2==0)
+      //  continue;
+      // }
+      //console.log(i);
+      //}
+
+      //Switch
+
+      let number = +prompt("Enter the number 1 to 3");
+      switch (number) {
+        case 1:
+
+        case 2:
+          console.log("User entered : 1");
+          console.log("User entered : 2");
+          break;
+        case 3:
+          console.log("User entered : 3");
+          break;
+
+        default:
+          console.log("Enter the number between 1 to 3");
+          break;
+      }
+    </script>
+  </body>
+</html>

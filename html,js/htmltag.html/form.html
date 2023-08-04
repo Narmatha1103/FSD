@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="form-html">
+    <title>form-html</title>
+</head>
+<body>
+    <h1><center><u>HTML-FORMS</u></center></h1>
+    <hr>
+    <form action="result.php" method="GET">
+        <fieldset>
+            <legend>Basic User Information</legend>
+            <table>
+            <tr>
+                <td> <label for="firstname">Firstname</label></td>
+                <td> <input type="text" name="firstname" id="firstname" placeholder="Enter your firstname" required autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td> <label for="lastname">Lastname</label></td>
+                <td> <input type="text" name="lastname" id="lastname" placeholder="Enter your lastname" required autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td> <label for="email">Email</label></td>
+                <td> <input type="email" name="email" id="email" placeholder="Enter your email"></td>
+            </tr>
+            <tr>
+                <td> <label for="dob">DOB</label></td>
+                <td> <input type="date" name="dob" id="dob"></td>
+            </tr>
+            <tr>
+                <td> <label for="age">Age</label></td>
+                <td> <input type="number" name="age" id="age" placeholder="Enter your age"></td>
+            </tr>
+            <tr>
+                <td> <label for="password">Password</label></td>
+                <td> <input type="password" name="password" id="password" placeholder="Enter your password"></td>
+            </tr>
+            <tr>
+                <td> <label for="confirmpassword">Comfirm Password</label></td>
+                <td> <input type="password" name="confirmfpassword" id="confirmpassword" placeholder="Enter password once again"></td>
+            </tr>
+            <tr>
+                <td> <label for="address">Address</label></td>
+                <td> <textarea name="address" id="address" cols="30" rows="10"></textarea>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>User Choice</legend>
+        <table>
+            <tr> <label for="gender">Gender:</label></tr>
+            <tr> <input type="radio" name="gender" id="male">Male
+                <input type="radio" name="gender" id="female">Female
+                <input type="radio" name="gender" id="not prefer">Not prefer to say
+            </tr>
+             <td> <label for="courses">Courses:</label></td>
+                <td> <input type="checkbox" name="tamil" id="tamil">Tamil
+                    <input type="checkbox" name="english" id="english">English
+                    <input type="checkbox" name="maths" id="maths">Maths
+                    <input type="checkbox" name="science" id="science">Science
+                    <input type="checkbox" name="social" id="social">Social
+                </td>
+             <tr>
+                <td>Hobbies (single):</td>
+                <td>
+                    <select name="hobbies" id="hobbies">
+                        <option value="playingkids">Playiongkids</option>
+                        <option value="music">Music</option>
+                        <option value="dance">Dance</option>
+                        <option value="singing">Singing</option>
+                        <option value="story writing">Story Writing</option>
+                    </select>
+                </td>
+             </tr> 
+             <tr>
+                <td>Hobbies (multiple):</td>
+                <td>
+                    <select name="hobbies" id="hobbies" multiple>
+                        <option value="playingkids">Playiongkids</option>
+                        <option value="music">Music</option>
+                        <option value="dance">Dance</option>
+                        <option value="singing">Singing</option>
+                        <option value="story writing">Story Writing</option>
+                    </select>
+                </td>
+             </tr> 
+             <tr>
+                <td> <label for="file">Upload File</label></td>
+                <td> <input type="file" name="upload" id="upload"></td>
+            </tr> 
+            </table>
+        </fieldset>
+            <fieldset>
+                <legend>Button Group</legend>
+                <table>
+                <tr>
+                   <td> <input type="submit" value="submit"></td>
+                    <td> <input type="reset" value="reset"></td>
+                </tr>
+            </table>
+            </fieldset>
+    </fieldset>
+    </body>
+</html>

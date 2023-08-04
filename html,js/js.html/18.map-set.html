@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Map-set JS" />
+    <title>Map-set JS</title>
+  </head>
+  <body>
+    <h1><center>Map-set JS</center></h1>
+    <script>
+      //object
+      /*let obj = {};
+       obj.name = "Puni";
+       obj.age = "28";
+       console.log(obj);*/
+
+      //Map()
+      // properties and methods => set(),get(),has(),delete(),clear(),size()
+      /*let user = new Map();
+       user.set("Name", "Narma").set("Age", "22").set("City", "Tirupur"); // chaning of Map set
+       console.log(user);
+       console.log(user.get("Age")); //22
+       console.log(user.has("Age")); //true
+       console.log(user.delete("Age")); //true
+       console.log(user); // delete age
+       //console.log(user.clear()); // undefined
+       //console.log(user); // clear the map set key and value
+       console.log(user.size); //2
+       */
+
+      // iterable method => forEach(),key(),value(),entries()
+      //let userMap = new Map();
+      //userMap.set("Name", "Narma").set("Age", "22").set("City", "Tirupur");
+      /*userMap.forEach((value, key) => {
+         console.log(`Key : ${key} => Value : ${value}`);
+       });*/
+      /* console.log(userMap.keys());
+       for (const key of userMap.keys()) {
+         console.log(key);
+       }
+
+       console.log(userMap.values());
+       for (const value of userMap.values()) {
+         console.log(value);
+       }
+
+       console.log(userMap.entries());
+       for (const [key, value] of userMap) {
+         console.log(`Key : ${key} => Value : ${value}`);
+       }*/
+
+      //Object.entries() => Object to map
+      /* let userObj = {
+         name: "Narma",
+         age: 22,
+         city: "Tirupur",
+       };
+       let userMap = new Map(Object.entries(userObj));
+       console.log(userMap);*/
+
+      //Object.fromEntries() =>map to Object
+      /*let userMap = new Map([
+         ["Name", "Narma"],
+         ["Age", 22],
+         ["City", "Tirupur"],
+       ]);
+       let userObj = Object.fromEntries(userMap);
+       console.log(userObj);*/
+
+      //set => value  add(),has(),delete(),clear(),size(),key(),value(),entries()
+      /* method => 1
+      let user = new Set();
+      user.add("Narma").add(22).add("Tirupur"); // chaning of set
+      console.log(user);*/
+
+      //method => 2
+      /*let user = new Set(["Apple", "Mango", "Orange", "Banana"]);
+      console.log(user);
+      console.log(user.has("Tirupur")); //false
+      console.log(user.delete("Apple")); //true
+      console.log(user); // delete Apple
+      //console.log(user.clear()); // undefined
+      //console.log(user); // clear the  set value
+      console.log(user.size); //2
+      //keys()
+      /*for (const fruits of user) {
+        console.log(fruits); // Mango Orange Banana
+      }*/
+
+      //values()
+      /*for (const fruits of user.values) {
+        console.log(fruits); // 3
+      }*/
+
+      //WeakMap => set(),get(),has(),delete()
+      /*let weakMap = new WeakMap();
+      console.log(weakMap);
+      let narma = { name: "Narma", age: 22 };
+      let puni = { name: "Puni", age: 28 };
+      weakMap.set(narma, "Narma Details");
+      weakMap.set(puni, "Puni Details");
+      console.log(weakMap); // puni=> narma
+      console.log(weakMap.get(narma)); // Narma Details
+      console.log(weakMap.has(puni)); // true
+      console.log(weakMap.delete(puni)); // true
+      console.log(weakMap); // puni delete*/
+
+      // weakSet => add(),has(),delete()
+
+      let weakSet = new WeakSet();
+      console.log(weakSet);
+      let narma = { name: "Narma", age: 22 };
+      let puni = { name: "Puni", age: 28 };
+      weakSet.add(narma, "Narma Details");
+      weakSet.add(puni, "Puni Details");
+      console.log(weakSet); // puni=> narma
+      console.log(weakSet.has(puni)); // true
+      //console.log(weakSet.delete(puni)); // true
+      console.log(weakSet); // puni delete
+    </script>
+  </body>
+</html>

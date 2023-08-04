@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Constructor - JS" />
+    <title>Constructor - JS</title>
+  </head>
+  <body>
+    <h1><center>Constructor - JS</center></h1>
+    <script>
+      /* function ShowMessage(name, age, isAdmin) {
+        this.name = name;
+        this.age = age;
+        this.isAdmin = isAdmin;
+      }
+      let john = new ShowMessage("john", 22, true); // constructor calling
+      console.log(john);
+      let jack = new ShowMessage("jack", 27, false);
+      console.log(jack);*/
+
+      //return constructor, method in constructor
+      /*function DisplayMessage(name) {
+        this.name = name;
+       // this.name = "jack";
+       //return
+        this.displayName = function () {
+          console.log(`Username is ${this.name}`);
+        };
+      }
+      let user = new DisplayMessage("john");
+      user.displayName();
+      console.log(user); // DisplayMessage{name:"john"}
+      //console.log(new DisplayMessage().name); // john*/
+
+      //optional chaning => ?
+
+      let user = {};
+      console.log(user.name?.firstName); // undefined
+      console.log("Hello");
+    </script>
+  </body>
+</html>

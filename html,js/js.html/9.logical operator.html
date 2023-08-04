@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Logical Operator - JS" />
+    <title>Logical Operator - JS</title>
+  </head>
+  <body>
+    <h1>Logical Operator - JS</h1>
+    <!--
+        1.OR(||) true => true
+        2.AND(&&) false => false
+        3.NOT(!) true=>false,false=>true
+        4.Nusslish coalescing(??) value (or) not
+    -->
+
+    <script>
+      // OR =>true
+      if (10 > 20 || 60 < 120) {
+        console.log(`if block`);
+      } else {
+        console.log(`else block`);
+      }
+
+      let result = 10 > 20 || 140 < 120 || "hello" || "world"; // => or => a
+      console.log(result); // false => hello, one condition true => result is true
+      console.log(20 || "Hello"); //20
+      console.log(0 || "Hello"); //Hello
+      console.log(false || "Hello"); //Hello
+      console.log(true || "Hello"); //true
+      console.log("" || "Hello"); //Hello
+      console.log(" " || "Hello"); //Hello //   space
+      console.log(1 || "Hello"); //1
+      console.log(0 || "Hello"); //"Hello"
+
+      //And => false
+      if (10 > 20 && 60 < 120) {
+        console.log(`if block`);
+      } else {
+        console.log(`else block`);
+      }
+
+      // 1
+      let sum = 12 > 10 && 20 > 30 && "Hello" && "World";
+      console.log(sum); // false
+      // 2
+      let num = 12 > 10 && 20 < 30 && "Hello" && "World"; // => return for the value for last operands
+      console.log(num); // world
+      console.log(0 && 1); //false
+
+      let user = "john";
+      console.log(user && "Anonymous user"); // => and =>b
+
+      //NOT(!)
+      console.log(!(10 > 7)); //false
+      console.log(!(20 < 10)); //true
+
+      //Nullish coalesching operator => ??
+      let a = "World";
+      let b = "Hello";
+      console.log(a ?? b); //Hello  (A value only defined)
+    </script>
+  </body>
+</html>

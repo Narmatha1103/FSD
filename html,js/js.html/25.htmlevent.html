@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HTML event -JS" />
+    <title>HTML event -JS</title>
+  </head>
+  <body>
+    <h1><center>HTML event -JS</center></h1>
+    <p id="para" onclick="alert('para is clicked')">This is a Paragraph</p>
+    <h2 onclick="displayMessage(event)">HTML event -JS</h2>
+    <h2 id="msg">Level 0 Events</h2>
+    <ul id="list">
+      <li class="list-items">Home</li>
+      <li class="list-items">About</li>
+      <li class="list-items">Projects</li>
+      <li class="list-items" style="display: none">Contect</li>
+    </ul>
+    <div id="demo"></div>
+    <button id="add">Add</button>
+    <button id="remove">Remove</button>
+
+    <script>
+      //HTML event -JS
+      /*function displayMessage(event) {
+        //alert("i am a function Message");
+        console.log(event); //pointerEvent
+        console.log(event.target); //<h2 onclick="displayMessage(event)">HTML event -JS</h2>
+        console.log(event.target.textContent); // HTML event
+      }
+      let msg = document.querySelector("#msg");
+      msg.onclick = function (e) {
+        //alert("i am  Level 0 Event");
+        //console.log(e); // pointerEvent
+        //console.log(e.target); //<h2 id="msg">Level 0 Events</h2>
+        // console.log(e.target.id);
+        //console.log(e.target.textContent); //Level 0 Event
+        console.log(this); // pointerEvent
+        console.log(this.target); //<h2 id="msg">Level 0 Events</h2>
+        console.log(this.target.id); //msg
+        console.log(this.target.textContent); //Level 0 Event
+      };
+      let list = document.querySelectorAll(".list-items");
+      console.log(list); // NodeList(4)
+      list.forEach((lists) => {
+        lists.addEventListener("click", function () {
+          console.log(this.textContent);
+        });
+      });*/
+      let add = document.querySelector("#add");
+      let remove = document.querySelector("#remove");
+      // 1method
+      /*add.addEventListener("click", () => {
+        alert("I am Clicked!!!");
+      });*/
+      add.addEventListener("click", addFn);
+      function addFn() {
+        alert("I am Clicked!!!");
+      }
+      remove.addEventListener("click", () => {
+        add.removeEventListener("click", addFn);
+      });
+    </script>
+  </body>
+</html>

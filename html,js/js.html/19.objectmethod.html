@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Object method - JS" />
+    <title>Object method - JS</title>
+  </head>
+  <body>
+    <h1><center>Object method - JS</center></h1>
+    <script>
+      /*Object method:
+
+        1.Object.keys()
+        2.Object.values()
+        3.Object.entries()
+        4.Object.fromEntries()*/
+
+      /* let userObj = {
+         name: "Narma",
+         age: 22,
+         city: "Tirupur",
+       };
+       console.log(Object.keys(userObj));
+       for (const key of Object.keys(userObj)) {
+         console.log(key);
+       }
+
+       console.log(Object.values(userObj));
+       for (const value of Object.values(userObj)) {
+         console.log(value);
+       }
+
+       console.log(Object.entries(userObj));
+       for (const [key, value] of Object.entries(userObj)) {
+         console.log(`Key : ${key} => Value : ${value}`);
+       }*/
+
+      //Object.entries() => Object to map
+      /* let userObj = {
+        name: "Narma",
+        age: 22,
+        city: "Tirupur",
+      };*/
+      /*let result = Object.entries(userObj).map((details) => [
+        details[0],
+        details[1],
+      ]);
+      console.log(result);*/
+
+      //Object.fromEntries()
+      /* let result = Object.fromEntries(
+        Object.entries(userObj).map((details) => [details[0], details[1] * 20])
+      ); // userObj =>[ name , narma]
+      console.log(result);*/
+
+      //Destructuring Assignment
+      // object array
+
+      //Array
+      // let [var1,var2,...var-N]=["arr-1","arr-2",....."arr-N"];
+      /*let userArr=["Narma","Puni","Kalai","Raja"];
+      console.log(userArr[0]); //Narma
+      console.log(userArr[1]); // Puni*/
+
+      //1
+      /* let [userOne, userTwo, userThree, userFour] = [
+        "Narma",
+        "Puni",
+        "Kalai",
+        "Raja",
+      ];
+      console.log(userFour); //Raja*/
+
+      //2
+      /*let [a, b] = ["Narma, Puni".split(","), "kalai"];
+      console.log(a); // ['Narma','Puni'] => output
+      console.log(b);*/
+
+      //3
+      /*let [a, b] = new Set(["Narma, Puni".split(","), "kalai"]);
+      console.log(a); //['Narma','Puni'] => output
+      console.log(b);*/
+
+      //4
+      /*let user = {};
+      [user.a, user.b] = ["Narma, Puni".split(","), "kalai"];
+      console.log(user); // ['Narma','Puni'] => output*/
+
+      //restUser
+      /*let [userOne, ...restUser] = ["Narma", "Puni", "Kalai", "Raja"];
+      console.log(userOne);
+      console.log(restUser);*/
+
+      //skip Assignment
+      /*let [userOne, , , userFour] = ["Narma", "Puni", "Kalai", "Raja"];
+      console.log(userOne); // Narma
+      console.log(userFour); //Raja
+
+      //Default value
+      let [a, b = "puni"] = ["Narma"];
+      console.log(a); // narma
+      console.log(b); // puni*/
+
+      //Object
+      // order change
+      /*let { age, city, name } = { 
+        name: "Narma",
+        age: 22,
+        city: "Tirupur",
+      };
+      console.log(name); //narma*/
+
+      //Alias name to the propertyName
+      /*let {
+        name: n,
+        age: a,
+        city: c,
+      } = {
+        name: "Narma",
+        age: 22,
+        city: "Tirupur",
+      };
+      console.log(n); //narma
+      console.log(c); // Tirupur */
+
+      //Default value
+      /*let {
+        name = "Puni",
+        age = 28,
+        city,
+      } = {
+        name: "Narma",
+        age: 22,
+        city: "Tirupur",
+      };
+      console.log(name); // Narma
+      console.log(age); //22
+      console.log(city); //Tirupur*/
+
+      //restProps
+      /*let { name, ...restProps } = {
+        name: "Narma",
+        age: 22,
+        city: "Tirupur",
+      };
+      console.log(name); // Narma
+      console.log(restProps); //{ age: 22, city: "Tirupur"}*/
+
+      //Nested distructing
+      /* let userName = {
+        name: {
+          firstName: "S.",
+          lastName: "Narmatha",
+        },
+        age: 22,
+        address: {
+          city: "Tirupur",
+        },
+      };
+      let {
+        name: { firstName, lastName },
+        age,
+        address: { city },
+      } = userName;
+      console.log(firstName); //S.
+      console.log(city); // Tirupur*/
+
+      // multi -Dimential Array
+      /*let matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      let [rowOne, rowTwo, rowThree] = matrix;
+      console.log(rowThree); // 7,8,9 */
+
+      //functions array  destructing
+
+      //1
+      /*function userName(name, age, city) {
+        console.log(name);
+        console.log(age);
+        console.log(city);
+      }
+      userName("Narma", 22, "Tirupur");*/
+
+      //2.restNum
+      /*function num([numOne, ...restNum]) {
+        console.log(numOne); //1
+        console.log(restNum); //[2, 3, 4, 5]
+      }
+      num([1, 2, 3, 4, 5]);*/
+
+      //Object and alias name
+      function userName({ name: n, age: a, city: c }) {
+        console.log(n); // Narma
+        console.log(a); //22
+        console.log(c); //Tirupur
+      }
+      userName({ name: "Narma", age: 22, city: "Tirupur" });
+    </script>
+  </body>
+</html>

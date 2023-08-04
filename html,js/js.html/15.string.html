@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="String - JS" />
+    <title>String - JS</title>
+  </head>
+  <body>
+    <h1><center>String - JS</center></h1>
+    <script>
+      let str = "Hello Welcome our World";
+      /*
+        character =>  h-e-l-l-o-   -w-e-l-c--o--m--e-     -o--u--r-     -w--o--r--l--d--str
+        index0    =>  0-1-2-3-4  5  6-7-8-9-10-11-12-  13  14-15-16  17  18-19-20-21-22--23  
+                                                                                  -2 -1
+        */
+      /* console.log(str[6]); //w
+      console.log(str.charAt(6)); //w
+      console.log(str.length); //23
+
+      //Access the last character of any string
+      console.log(str[str.length - 1]); //23-1=22 =>str[22]=>d
+
+      console.log(str.at(-2)); //last character -1 => d, -2 => l
+
+      // for...of => iterate the character of the string
+      /*for(let varName of string){
+
+      };
+      for (const char of str) {
+        console.log(char); // line by line display the string
+      }
+
+      console.log(str.toUpperCase());
+      console.log(str.toLowerCase());*/
+
+      //str.indexOf
+      let index = str.indexOf("Welcome");
+      console.log(index); //6
+      console.log(str.indexOf("e", 2)); //7
+      console.log(str.lastIndexOf("o", 20)); //19
+
+      /* let searchSubstring = "o";
+      let pos = 0;
+      while (true) {
+        let foundPos = str.indexOf(searchSubstring, pos); // 4
+        if (foundPos == -1) break;
+        console.log(
+          `The Search String ${searchSubstring} => Found at: ${foundPos}`
+        );
+        pos = foundPos + 1; // 4+1 => pos
+      }*/
+
+      console.log(str.includes("Welcome")); // true
+      console.log(str.includes("baby")); //false
+      console.log(str.startsWith("Hello")); //true
+      console.log(str.endsWith("World")); //true
+
+      console.log(str.slice(0, 10)); // Hello Welc a=>start b=>end
+      console.log(str.slice(-5, -1)); //Worl
+
+      console.log(str.substring(6, 13)); // Welcome pos chaning
+      console.log(str.substring(13, 6)); //Welcome
+
+      console.log(str.substr(0, 8)); //Hello Wel
+
+      console.log("Hello" > "Welcome"); //false
+
+      console.log(str.codePointAt(0)); // string => decimal value 72
+      console.log(str.codePointAt("H")); //72
+
+      console.log(String.fromCodePoint(108)); //=>l decimal value => string
+      console.log(String.fromCodePoint(72)); //=>H
+    </script>
+  </body>
+</html>

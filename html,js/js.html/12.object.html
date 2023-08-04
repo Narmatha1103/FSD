@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="object-js" />
+    <title>object-js</title>
+  </head>
+  <body>
+    <h1><center>OBJECT - JS</center></h1>
+    <script>
+      /*let userDetails = {
+        firstName: "Narmatha",
+        lastName: "Punitha",
+        age: 22,
+        isAdmin: true,
+      };
+      console.log(userDetails);
+      console.log(userDetails.lastName); //Access the"key" value
+
+      //delete the object "property"
+      // delete objectName.key;
+      delete userDetails.age;
+      console.log(userDetails);
+
+      //add the new property
+      // objName.newKey="newValue";
+      userDetails.city = "Tirupur";
+      console.log(userDetails);
+
+      //modifyy exiting property value
+      // objName.exitingKey="newValue";
+      userDetails.city = "cba";
+      console.log(userDetails);*/
+
+      let narma = {
+        name: "Narmatha",
+        dateOfBirth: "11-03-2001",
+        "date of birth": "11-03-2001",
+        age: 22,
+        isAdmin: true,
+      };
+      console.log(narma.name);
+      console.log(narma.dateOfBirth);
+      console.log(narma["date of birth"]);
+      console.log(narma.age);
+
+      /*let user={};
+       let key="fistName";
+       user[key]="Narmatha";
+       console.log(user);*/
+
+      /* let user = {
+         firstName: "Narmatha",
+         lastName: "Punitha",
+         age: 22,
+       };
+       let key = prompt("Enter the property");
+       console.log(user[key]);*/
+
+      //FUNCTION OBJECT
+      /*function user(firstName, age, year) {
+        return {
+          firstName,
+          numTwo: age,
+          numThree: year,
+        };
+      }
+      console.log("john", 22, 2001);*/
+
+      // propName in ObjName
+      /*let fruits = {
+        apple: 30,
+        orange: 28,
+        banana: 22,
+      };
+      console.log("apple" in fruits);
+      console.log("mango" in fruits);*/
+
+      // for.... in loop
+      let fruits = {
+        apple: 30,
+        orange: 28,
+        banana: 22,
+      };
+      for (const fruit in fruits) {
+        console.log(`${fruit}:${fruits[fruit]}`);
+      }
+
+      //Object refference and object copying
+      // primitive =>old
+      //non-primitive =>new
+      let objOne = {
+        name: "john",
+      };
+      let objTwo = objOne;
+      objTwo.age = 30;
+      console.log(objOne);
+      console.log(objTwo);
+
+      let a = {};
+      let b = {};
+      console.log(a == b); //false
+      console.log(a === b); //false
+
+      let c = {};
+      let d = c;
+      console.log(c == d); //true
+      console.log(c === d); //true
+
+      //object.assign(); => copy, clone, merge
+      /*let user = {
+        firstName: "Narmatha",
+        lastName: "Punitha",
+        age: 22,
+        isAdmin: true,
+      };
+      let details = {};
+      for (let key in user) {
+        details[key] = user[key];
+      }
+      console.log(user);
+      console.log(details);
+      user.city = "Tirupur";
+      details.city = "cba";
+      console.log(user);
+      console.log(details);*/
+
+      //nested property in object
+      /* let user = {
+        name: {
+          firstName: "Narmatha",
+          lastName: "Punitha",
+        },
+        age: 22,
+        isAdmin: true,
+      };
+      console.log(user.name.firstName);*/
+
+      //object.assign()
+      /*let user = {
+        firstName: "Narmatha",
+        lastName: "Punitha",
+        age: 22,
+        isAdmin: true,
+      };
+      let details = {};
+      Object.assign(details, user);
+      console.log(user);
+      console.log(details);
+      user.city = "Tirupur";
+      details.city = "cba";
+      console.log(user);
+      console.log(details);*/
+
+      //merging
+      let num1 = { name: "narma" };
+      let num2 = { age: 22 };
+      let num3 = {};
+      Object.assign(num1, num2, num3, {
+        depatment: "Testing",
+        company: "SkillSafari",
+      });
+      console.log(num1); // merging of 1 one
+      console.log(num2);
+      console.log(num3);
+
+      //object method - this keyword
+      let userDetails = {
+        firstName: "Narmatha",
+        lastName: "Punitha",
+        age: 22,
+        // city: function () {
+        //console.log("Tirupur");
+        //},
+        //short hand
+        city: "Tirupur",
+        displayCity() {
+          console.log(`The city name is : ${this.city}`);
+        },
+
+        isAdmin: true,
+      };
+      console.log(userDetails.displayCity);
+    </script>
+  </body>
+</html>

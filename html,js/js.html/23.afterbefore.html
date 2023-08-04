@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="After and Before method -JS" />
+    <title>After and Before method -JS</title>
+  </head>
+  <body>
+    <h1><center>After and Before method -JS</center></h1>
+    <ul id="list">
+      <li>Project</li>
+      <li>About</li>
+    </ul>
+    <ul id="original">
+      <li>Home</li>
+      <li>About</li>
+      <li>Contect</li>
+      <li>Project</li>
+    </ul>
+    <ul id="clone"></ul>
+    <script>
+      //after
+      // adding a node
+      /*let projects = document.querySelector("#list").firstElementChild;
+      let li = document.createElement("li");
+      li.className = "list-item";
+      li.textContent = "Content";
+      projects.after(li);*/ // project content
+
+      //before
+      // adding a node
+      /*let projects = document.querySelector("#list").firstElementChild;
+      let li = document.createElement("li");
+      li.className = "list-item";
+      li.textContent = "Content";
+      projects.before(li); // content project */
+
+      //after
+      // adding a node
+      /*let menuArr = ["Home", "content", "About", "list"];
+      let menuNodes = menuArr.map((menu) => {
+        let li = document.createElement("li");
+        li.textContent = menu;
+        return li;
+      });
+      console.log(menuNodes);
+      let list = document.querySelector("#list").firstElementChild;
+      list.after(...menuNodes);*/
+
+      //before
+      // adding a node
+      /*let menuArr = ["Home", "content", "About", "list"];
+      let menuNodes = menuArr.map((menu) => {
+        let li = document.createElement("li");
+        li.textContent = menu;
+        return li;
+      });
+      console.log(menuNodes);
+      let list = document.querySelector("#list").firstElementChild;
+      list.before(...menuNodes);*/
+
+      // append => last child
+      /*let projects = document.querySelector("#list");
+      let li = document.createElement("li");
+      li.className = "list-item";
+      li.textContent = "Content";
+      projects.append(li); // project content*/
+
+      // prepend => first child
+      /* let projects = document.querySelector("#list");
+      let li = document.createElement("li");
+      li.className = "list-item";
+      li.textContent = "Content";
+      projects.prepend(li);*/
+
+      // prepend nodes
+      /*let menuArr = ["Home", "content", "About", "list"];
+      let menuNodes = menuArr.map((menu) => {
+        let li = document.createElement("li");
+        li.textContent = menu;
+        return li;
+      });
+      console.log(menuNodes);
+      let list = document.querySelector("#list");
+      list.prepend(...menuNodes);*/
+
+      //insertAdjacentHTML
+      /* let list = document.querySelector("#list");
+      list.insertAdjacentHTML("beforebegin", "<h2>Menu List</h2>");
+      list.insertAdjacentHTML("afterbegin", "<li>Home</li>");
+      list.insertAdjacentHTML("beforeend", "<li>About</li>");
+      list.insertAdjacentHTML("afterend", "<hr>");*/
+
+      //replaceChild
+      let projects = document.querySelector("#list");
+      let li = document.createElement("li");
+      li.className = "list-item";
+      li.textContent = "Content";
+      projects.replaceChild(li, projects.firstElementChild); // content*/
+      //projects.insertBefore(li, projects.lastElementChild);
+
+      //cloneNode,removeChild
+      //original.cloneNode(true);
+      /* let original = document.querySelector("#original");
+      let clone = document.querySelector("#clone");
+      console.log(original.cloneNode(true));
+      clone.appendChild(original.cloneNode(true));
+      original.removeChild(original.firstElementChild); //Home*/
+    </script>
+  </body>
+</html>

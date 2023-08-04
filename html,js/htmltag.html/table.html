@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <u><center>HTML TABLE</center></u>
+    </h1>
+    <hr />
+    <!--
+       Table:
+       1.method-1
+       2.method-2
+
+       TableAttributes:
+       1.Table with width
+       2.Table with cellspacing
+       3.Table with cellpadding
+       4.Table with colspan/rowsapan
+      -->
+    <h2>TABLE METHOD-1</h2>
+    <table border="1">
+      <tr>
+        <th>s.no</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>Narma</td>
+        <td>css</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>puni</td>
+        <td>it</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>Kalai</td>
+        <td>Bba</td>
+        <td>20</td>
+      </tr>
+    </table>
+    <hr />
+    <!--
+        method-2
+      -->
+    <h1>TABLE METHOD-2</h1>
+    <table border="1">
+      <caption>
+        STUDENT TABLE
+      </caption>
+      <thead>
+        <tr>
+          <th>s.no</th>
+          <th>Name</th>
+          <th>Dept</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>Narma</td>
+          <td>css</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>puni</td>
+          <td>it</td>
+          <td>21</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Kalai</td>
+          <td>Bba</td>
+          <td>20</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>End of Table</td>
+        </tr>
+      </tfoot>
+    </table>
+    <hr />
+    <!--
+        Table Attributes
+      -->
+    <h1>TABLE ATTRIBUTES</h1>
+    <h2>Table With width</h2>
+    <table border="1" width="50%">
+      <tr>
+        <th>s.no</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>Narma</td>
+        <td>css</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>puni</td>
+        <td>it</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>Kalai</td>
+        <td>Bba</td>
+        <td>20</td>
+      </tr>
+    </table>
+    <hr />
+    <h2>Table With Cellspacing</h2>
+    <table border="1" cellspacing="5px">
+      <tr>
+        <th>s.no</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>Narma</td>
+        <td>css</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>puni</td>
+        <td>it</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>Kalai</td>
+        <td>Bba</td>
+        <td>20</td>
+      </tr>
+    </table>
+    <hr />
+    <h2>Table With Cellpadding</h2>
+    <table border="1" cellpadding="10px" width="100%">
+      <tr>
+        <th>s.no</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>Narma</td>
+        <td>css</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>puni</td>
+        <td>it</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>Kalai</td>
+        <td>Bba</td>
+        <td>20</td>
+      </tr>
+    </table>
+    <hr />
+    <h2>Table With colspan / rowspan</h2>
+    <table border="1" cellpadding="5" width="100%">
+      <tr>
+        <th>s.no</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>narma</td>
+        <td>css</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td rowspan="2">puni /kalai</td>
+        <td colspan="2">it (21)</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>Bba</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td colspan="3">Total</td>
+        <td>123456</td>
+      </tr>
+    </table>
+  </body>
+</html>

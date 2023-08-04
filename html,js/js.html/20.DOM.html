@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DOM - manipulation JS" />
+    <title>DOM - manipulation JS</title>
+  </head>
+  <body>
+    <h1><center>DOM - manipulation JS</center></h1>
+    <div id="demo">
+      <p>this a another Paragraph</p>
+      <p id="para">This is a Paragraph</p>
+      <p>this a another Paragraph-1</p>
+    </div>
+    <ul id="list">
+      <li class="list-items">Home</li>
+      <li class="list-items">About</li>
+      <li class="list-items">Projects</li>
+      <li class="list-items">Contect</li>
+    </ul>
+    <form action="#" method="get">
+      <input type="radio" id="subjects" name="subjects" value="Tamil" />Tamil
+      <input
+        type="radio"
+        id="subjects"
+        name="subjects"
+        value="English"
+      />English
+      <input type="radio" id="subjects" name="subjects" value="Maths" />Maths
+      <input
+        type="radio"
+        id="subjects"
+        name="subjects"
+        value="Science"
+      />Science
+    </form>
+    <script>
+      //SELECTING ELEMENT
+
+      // 1.getElementById("idname")
+      //let para = document.getElementById("para");
+      //console.log(para.textContent);
+
+      // 2.getElementsByClassName("classname")
+      /*let listItems = document.getElementsByClassName("list-items");
+      console.log(listItems);
+
+      //1
+      console.log(listItems[0].textContent);
+      console.log(listItems[1].textContent);
+      console.log(listItems[2].textContent);
+      console.log(listItems[3].textContent);
+      //2
+      for (const listItem of listItems) {
+        console.log(listItem.textContent);
+      }*/
+
+      // 3.getElementTagName("Tagname")
+      //let paras = document.getElementsByTagName("p");
+      //console.log(paras);
+
+      // 4.getElementsByName("name Attribute value")
+      /*let subjects = document.getElementsByName("subjects");
+      console.log(subjects);
+      console.log(Array.from(subjects));
+      Array.from(subjects).forEach((subject) => {
+        console.log(subject);
+        console.log(subject.value);
+      });*/
+
+      // 5.querySelector(Css selecter)
+      //let para = document.querySelector("#para");
+      //console.log(para);
+      //console.log(para.textContent);
+
+      // 5.querySelectorAll(Css selecter)
+      //let lists = document.querySelector("#list");
+      //console.log(lists);
+      //console.log(lists.textContent);
+
+      //let lists = document.querySelector("[name='subjects']");
+      //console.log(lists);
+      //console.log(lists.textContent);
+
+      //Traverse
+
+      // 1.parentNode => get the parents of the child
+      //let para = document.querySelector("#para");
+      //console.log(para);
+      //console.log(para.parentNode);
+
+      // 2.parent.firstElementChild,
+      //   parent.lastElementChild ,
+      /* let demo = document.querySelector("#demo");
+      console.log(demo);
+      console.log(demo.firstElementChild);
+      console.log(demo.lastElementChild);
+      console.log(demo.children);*/
+
+      // 3.parent.firstElementChild,
+      //   parent.lastElementChild ,
+      let para = document.querySelector("#para");
+      console.log(para);
+      console.log(para.nextElementSibling);
+      console.log(para.previousElementSibling);
+    </script>
+  </body>
+</html>

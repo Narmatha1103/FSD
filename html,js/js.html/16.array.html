@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Array - JS" />
+    <title>Array - JS</title>
+  </head>
+  <body>
+    <h1><center>Array - JS</center></h1>
+    <script>
+      //let subject = ["Tamil", "English", "Maths", "Science", "Social"];
+
+      //pop(),push(),shift(),unshift()
+      /*console.log(subject[2]);
+      console.log(subject.pop()); //social
+      console.log(subject);
+      console.log(subject.push("cs")); // 5
+      console.log(subject);
+      console.log(subject.shift()); //Tamil
+      console.log(subject);
+      console.log(subject.unshift("it")); //5
+      console.log(subject);*/
+
+      //splice() => delete,insert,replace
+      /*let subject = ["Tamil", "English", "Maths", "Science", "Social"];
+      console.log(subject.splice(2, 1)); // maths delete
+      console.log(subject);
+      console.log(subject.splice(2, 0, "cs"));
+      console.log(subject);
+      console.log(subject.splice(1, 1, "it"));
+      console.log(subject);*/
+
+      //slice() => b-1 => end index
+      let subject = ["Tamil", "English", "Maths", "Science", "Social"];
+      console.log(subject.slice(1, 2)); // english
+      console.log(subject);
+
+      //concat => copy
+      /*let num1 = [];
+      let num2 = [1, 2, 3];
+      let num3 = [4, 5, 6];
+      console.log(num1.concat(num2, num3)); //123456*/
+
+      //reverse() , Array.isArray()
+      let num = [1, 2, 3, 4, 5];
+      console.log(num);
+      //console.log(num.reverse());
+      //console.log(num.join(","));
+      console.log(Array.isArray(num)); // true
+
+
+      //split() => string to Array
+      let str="Narmatha";
+      //console.log(str.split(""));
+       //console.log(str.split("").reverse().join('-'));
+
+
+    </script>
+  </body>
+</html

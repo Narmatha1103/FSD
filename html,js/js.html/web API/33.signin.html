@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Signin page">
+    <title>signin page</title>
+</head>
+<body>
+    <h1><center>SignIn Page</center></h1>
+    <form action="#" id="form">
+     
+        <p>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </p>
+        <p>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </p>
+        <p>
+          Not Yet Registered ?<a href="./32.registerform.html">Click Here to Register</a>
+        </p>
+        <p>
+          <input type="submit" value="Submit" id="submit" />
+          <input type="reset" value="Clear" id="reset" />
+        </p>
+        
+      </form>
+      
+      <script>
+        let submitBtn = document.querySelector("#submit");
+        let resetBtn = document.querySelector("#reset");
+        let form = document.querySelector("#form");
+       submitBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          
+          let email = form[0].value;
+          let password = form[1].value;
+
+          console.log(Object.entries(localStorage));
+           let userDetail=Object.entries(localStorage).find((ele)=>JSON.parse(ele[1]).email===email);
+          console.log(userDetail);
+          sessionStorage.setItem(userDetail[0],userDetail[1]);
+          alert("User Logged in  Successfully");
+          window.location.href=`./34.profilepage.html?id=${userDetail[0]}`;
+        });
+      </script>
+    </body>
+  </html>
+  
+</body>
+</html>ss

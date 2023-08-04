@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Geolocation - API" />
+    <title>Geolocation - API</title>
+  </head>
+  <body>
+    <h1><center>Geolocation - API</center></h1>
+    <p><span id="result"></span></p>
+    <hr />
+    <button id="btn">Click</button>
+
+    <script>
+      console.log(navigator.geolocation);
+      let btn = document.querySelector("#btn");
+      let result = document.querySelector("#result");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const onSuccess = (position) => {
+          console.log(position);
+          const {
+            coords: { latitude, longitude },
+          } = position;
+          console.log(latitude);
+          console.log(longitude);
+          result.textContent = `Your Current Location : Latitude => ${latitude} and  Longtitude => ${longitude}`;
+        };
+        const onError = () => {
+          result.textContent = "Access Denied";
+        };
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+      });
+    </script>
+  </body>
+</html>

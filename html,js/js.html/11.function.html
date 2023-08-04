@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Function -Js" />
+    <title>Function -Js</title>
+  </head>
+  <body>
+    <h1><center>FUNCTION - JS</center></h1>
+    <script>
+      // function declaration
+
+      //function add(numOne, numTwo) {
+      //let result = numOne + numTwo;
+      //console.log(result);
+      //}
+
+      // function calling
+
+      //add(20, 50);
+      //add(78, 90);
+      //add(2, 34);
+
+      //Even number
+
+      function double(num) {
+        for (i = 1; i <= num; i++) {
+          if (i % 2 == 0) {
+            console.log(i);
+          }
+        }
+      }
+      double(20);
+
+      //parameter and argument => optional
+
+      /*function add() {
+        let numOne = 20;
+        let numTwo = 80;
+        let result = numOne + numTwo;
+        console.log(result);
+      }
+      add();*/
+
+      //Name
+
+      //function display(name) {
+      //console.log(`Welcome,${name}`);
+      //}
+      //display("Narmatha");
+      //display("punitha");
+      //display("kalaiselvi");
+
+      //local variable
+
+      /* function display(name) {
+        // cannot {} function outer area is accesssing for the console method
+        let message = "Welcome to Functions";
+        let age = 22;
+        console.log(name);
+        console.log(message);
+      }
+      display("Narmatha");
+      console.log(message); //Reference error
+      console.log(age); //Reference error */
+
+      // Outer variable
+
+      let message = "Welcome to Outer Functions";
+      let age = 22;
+      function display(name) {
+        message = "Welcome to Inner Functions";
+        let age = 22;
+        console.log(name);
+        console.log(message); //Welcome to Inner Functions
+        console.log(age);
+      }
+      console.log(message); //Welcome to Outer Functions
+      display("Narmatha");
+      console.log(message); //Welcome to Inner Functions
+
+      //parameter
+
+      /*function display(message, from) {
+        message = "Hello";
+        from = "john";
+        console.log(message, from); //hello john
+      }
+      let message = "Welcome,";
+      let user = "jack";
+      display(message, user);
+      console.log(message, user); //welcome,jack */
+
+      //default value
+
+      /*function display(message, from) {
+        console.log(message, from); // hello undefined
+      }
+
+      display("Hello"); */
+
+      // returning value
+
+      /*function display(num1, num2) {
+        let result = num1 + num2;
+        console.log(num1); // display
+        return result;
+
+        console.log(num2); // not display returning the value
+      }
+      console.log(display(2, 7)); */
+
+      /*  function checkAccess(access) {
+        if (access === "yes") {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let access = prompt("Are you an admin");
+      if (checkAccess(access)) {
+        console.log("Access Granted");
+      } else {
+        console.log("No access");
+      } */
+
+      // FUNCTION EXPRESSION
+
+      //declaration
+
+      /* let display = function () {
+        let numOne = 20;
+        let numTwo = 50;
+        let result = numOne + numTwo;
+        console.log(result);
+      };
+      display();
+
+      //Advange of using function variable copy
+      let addOne = display;
+      addOne();*/
+
+      //callback function
+      // function to function expression passion a function parameter
+
+      /*function add(numOne, numTwo, result) {
+        let sum = numOne + numTwo;
+        result(sum);
+      }
+      let output = function (result) {
+        console.log(result); //112
+      };
+      add(34, 78, output);*/
+
+      //ARROW FUNCTION
+
+      let add = (num1, num2) => num1 * num2;
+      console.log(add(3, 9));
+    </script>
+  </body>
+</html>

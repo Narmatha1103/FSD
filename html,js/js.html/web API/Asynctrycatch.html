@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Async/Await - Try - Catch" />
+    <title>Async/Await - Try - Catch</title>
+  </head>
+  <body>
+    <h1><center>Async/Await - Try - Catch</center></h1>
+    <form action="#" id="form">
+      <p>
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search city weather update"
+        />
+      </p>
+      <input type="submit" value="Search" id="search-btn" />
+    </form>
+    <hr />
+    <div id="result"></div>
+
+    <script>
+      let searchCity = document.querySelector("#search");
+      let searchBtn = document.querySelector("#search-btn");
+
+      searchBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        fetchWeatherData(
+          `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+            searchCity
+          )}&appid=676aed6e443bc8f55f8845f354212266}`
+        );
+      });
+
+      let fetchWeatherData = async (url) => {
+        try {
+          let res = await fetch(url);
+          let data = await res.json();
+          console.log(data);
+          let result = Document.querySelector("#result");
+          result.innerHTML = `
+          <p>City : ${data.name}</p>
+          <p>Country : ${data.sys.country}</p>
+          <p>Temp : ${(data.main.temp - 272.15).toFixed(2)} C</p>
+          <p>Min.Temp : ${(data.main.temp_min - 272.15).toFixed(2)} C</p>
+          <p>Max.Temp : ${(data.main.temo_max - 272.15).toFixed(2)} C</p>
+
+          `;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    </script>
+  </body>
+</html>

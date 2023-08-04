@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Data Types-JS" />
+    <title>Data Types-JS</title>
+  </head>
+  <body>
+    <h1>DATA TYPES - JS</h1>
+    <script>
+      // 1.NUMBER / INTEGER
+      let name = "Narmatha";
+      let age = 22;
+      let percentage = 89.7;
+      console.log(name);
+      console.log(typeof name); //string
+      console.log(typeof age); //number
+      console.log(typeof percentage); //number
+      console.log(1 / 0); //Infinity
+      console.log(-(1 / 0)); // -Infinity
+      console.log("Hello" / 23); //NaN
+
+      // 2.BIGINT => ^ / n
+      let countDown = 12345678987654323456789876543n;
+      console.log(countDown); // 12345678987654323456789876543n
+      console.log(typeof countDown); //bigint
+
+      // 3. STRING
+      // Double quote vs single quote vs Backtick
+      let double = "This is 'double' quote";
+      let single = 'This is "double" quote';
+      let backTick = `This is "double" ${3 + 9} quote`;
+      console.log(double);
+      console.log(single);
+      console.log(backTick);
+
+      // 4.BOOLEAN
+      // 1. true / false
+      // 2. 1 / 0
+      // 3. on / off
+      // 4. yes / no
+      // 5. + / -
+      let isAdmin = true;
+      let isEliglible = false;
+      let sum = 5 > 20;
+      console.log(isAdmin); //true
+      console.log(isEliglible); //false
+      console.log(sum); //false
+      console.log(typeof isAdmin); //boolean
+      console.log(typeof isEliglible); //boolean
+
+      // 5.NULL
+      // null is not a type of datatype but its exits in js
+      let city = null;
+      console.log(city);
+      console.log(typeof city); // object
+
+      // 6. UNDEFINED
+      let state;
+      console.log(state);
+      console.log(typeof state); //undefined
+    </script>
+  </body>
+</html>

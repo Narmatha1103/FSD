@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fatch-API  - Post Data" />
+    <title>Fatch-API - Post Data</title>
+  </head>
+  <body>
+    <h1><center>Fatch-API - Post Data</center></h1>
+    <form action="#" id="form">
+      <p>
+        <input type="text" name="title" id="title" placeholder="Enter title" />
+      </p>
+
+      <p>
+        <textarea
+          name="description"
+          id="description"
+          cols="21"
+          rows="5"
+          placeholder="Enter Your description"
+        ></textarea>
+      </p>
+      <p>
+        <input type="submit" value="submit" id="submit" />
+        <input type="reset" value="clear" id="reset" />
+      </p>
+    </form>
+
+    <script>
+      let form = document.querySelector("#form");
+      let btn = document.querySelector("#submit");
+
+      const postData = async (url) => {
+        let res = await fetch(url, {
+          method: "POST",
+          body: new FormData(form),
+        });
+        let data = await res.json();
+        console.log(data);
+      };
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        postData("https://fakestoreapi.com/products");
+      });
+    </script>
+  </body>
+</html>
