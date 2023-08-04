@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Profile page" />
+    <title>"Profile page</title>
+  </head>
+  <body>
+    <h1>Profile page</h1>
+    <div
+      style="display: flex; justify-content: space-around; align-items: center"
+    >
+      <h2>Welcome, <span id="display-name"></span></h2>
+      <button id="logout">Logout</button>
+    </div>
+    <hr />
+
+    <table>
+      <tr>
+        <th>Username :</th>
+        <td><input type="text" name="username" id="username" /></td>
+      </tr>
+      <tr>
+        <th>Email :</th>
+        <td><input type="text" name="email" id="email" /></td>
+      </tr>
+      <tr>
+        <td><button id="edit">Edit</button></td>
+        <td><button id="delete">Delete</button></td>
+      </tr>
+    </table>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+      import {
+        getAuth,
+        deleteUser,
+      } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+      import {
+        getDatabase,
+        ref,
+        onValue,
+        child,
+        push,
+        update,
+      } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD0K1uzdGVpZY7ZixrPxQrWrVtpwHM3GA8",
+        authDomain: "first-project-52ffe.firebaseapp.com",
+        projectId: "first-project-52ffe",
+        storageBucket: "first-project-52ffe.appspot.com",
+        messagingSenderId: "307382256224",
+        appId: "1:307382256224:web:07c2ba516b258228c33905",
+      };
+
+      // Initialize Firebast
+      const app = initializeApp(firebaseConfig);
+
+      let db = getDatabase();
+      let auth = getAuth();
+
+      let displayName = document.querySelector("#display-name");
+      let username = document.querySelector("#username");
+      let email = document.querySelector("#email");
+      let edit = document.querySelector("#edit");
+      let deleteBtn = document.querySelector("#delete");
+      let logOut = document.querySelector("#logout");
+
+      let urlQuery = new URLSearchParams(location.search);
+      let [id] = urlQuery.values();
+      console.log(id);
+
+      let createdAt = null;
+
+      const userRef = ref(db, "users/" + id);
+      onValue(userRef, (snapshot) => {
+        const userDetail = snapshot.val();
+        console.log(userDetail);
+        createdAt = userDetail.createdAt;
+        displayName.textContent = userDetail.username;
+        username.value = userDetail.username;
+        email.value = userDetail.email;
+        sessionStorage.setItem(id, id);
+      });
+
+      logOut.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (confirm("Are you sure logout ?")) {
+          sessionStorage.removeItem(id);
+          setTimeout(() => {
+            window.location.href = "./1.signin.html";
+          }, 2000);
+        }
+      });
+
+      edit.addEventListener("click", (e) => {
+        e.preventDefault();
+        let username = document.querySelector("#username").value;
+        let email = document.querySelector("#email").value;
+        let newDate = {
+          username: username,
+          email: email,
+          uid: id,
+          createdAt: createdAt,
+        };
+        console.log(newDate);
+        if (confirm("Are you sure to edit the Details ?")) {
+          const updates = {};
+          updates["/users/" + id] = newDate;
+          update(ref(db), updates);
+          alert("User Details updated successfully");
+        }
+      });
+
+      deleteBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const user = auth.currentUser;
+        console.log(user);
+        if (confirm("Are you sure to delete the Details ?")) {
+          deleteUser(user)
+            .then(() => {
+              console.log("User deleted");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+
+          const updates = {};
+          updates["/users/" + id] = null;
+          update(ref(db), updates);
+          sessionStorage.removeItem(id);
+          alert("User account deleted successfully");
+          setTimeout(() => {
+            window.location.href = "./1.signin.html";
+          }, 2000);
+        }
+      });
+    </script>
+  </body>
+</html>

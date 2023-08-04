@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="REGISTRATION FORMS" />
+    <title>REGISTRATION FORMS</title>
+  </head>
+  <body>
+    <h1><center>REGISTRATION FORMS</center></h1>
+    <form action="#" id="form">
+      <p>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter your name"
+          required
+        />
+      </p>
+      <p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+      </p>
+      <p>
+        <input type="submit" value="Register" id="submitBtn" />
+        <input type="reset" value="Clear" id="resetBtn" />
+      </p>
+    </form>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD0K1uzdGVpZY7ZixrPxQrWrVtpwHM3GA8",
+        authDomain: "first-project-52ffe.firebaseapp.com",
+        projectId: "first-project-52ffe",
+        storageBucket: "first-project-52ffe.appspot.com",
+        messagingSenderId: "307382256224",
+        appId: "1:307382256224:web:07c2ba516b258228c33905",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      let auth = getAuth();
+      let db = getDatabase();
+
+      let submitBtn = document.querySelector("#submitBtn");
+      let reserBtn = document.querySelector("#reserBtn");
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let username = document.querySelector("#username").value;
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#password").value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userDetails) => {
+            console.log(userDetails);
+            const uid = userDetails.user.uid;
+            set(ref(db, "users/" + uid), {
+              uid: uid,
+              username: username,
+              email: email,
+              password: password,
+              createdAt: new Date().toISOString(),
+            });
+            alert("User created successfully");
+            setTimeout(() => {
+              window.location.href = "./1.signin.html";
+            }, 2000);
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+          });
+      });
+    </script>
+  </body>
+</html>

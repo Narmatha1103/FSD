@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="signIn" />
+    <title>signin</title>
+  </head>
+  <body>
+    <h1>signIn</h1>
+    <form action="#" id="form">
+      <p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+      </p>
+      <p>
+        <input type="submit" value="SignIn" id="submit" />
+        <input type="reset" value="Clear" id="reset" />
+      </p>
+    </form>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD0K1uzdGVpZY7ZixrPxQrWrVtpwHM3GA8",
+        authDomain: "first-project-52ffe.firebaseapp.com",
+        projectId: "first-project-52ffe",
+        storageBucket: "first-project-52ffe.appspot.com",
+        messagingSenderId: "307382256224",
+        appId: "1:307382256224:web:07c2ba516b258228c33905",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      let auth = getAuth();
+
+      let submitBtn = document.querySelector("#submit");
+      let resetBtn = document.querySelector("#reset");
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userDetails) => {
+            console.log(userDetails);
+            const uid = userDetails.user.uid;
+            if (uid) {
+              alert("User Logged insuccessfully");
+              setTimeout(() => {
+                window.location.href = `./1.profilepage.html?id=${uid}`;
+              }, 2000);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            const errorCode = error.code;
+            console.log(errorCode);
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            alert("Something Went Wrong. Check User Credentialas....");
+          });
+      });
+    </script>
+  </body>
+</html>
